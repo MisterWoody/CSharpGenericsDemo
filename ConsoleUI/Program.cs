@@ -18,6 +18,8 @@ namespace ConsoleUI
             //List<int> ages = new List<int>();
             //ages.Add(23);
 
+            Console.ReadLine();
+
             DemonstrateTextFileStorage();
 
             
@@ -35,7 +37,7 @@ namespace ConsoleUI
 
             PopulateLists(people, logs);
 
-            OriginalTextFileProcessor.SavePeople(people, peopleFile);
+            // OriginalTextFileProcessor.SavePeople(people, peopleFile);
 
             var newPeople = OriginalTextFileProcessor.LoadPeople(peopleFile);
 
