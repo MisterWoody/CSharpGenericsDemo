@@ -38,12 +38,12 @@ namespace ConsoleUI
             PopulateLists(people, logs);
 
             //OriginalTextFileProcessor.SaveLogs(logs,logFile);
-            var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
+            //var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
 
-            foreach (var log in newLogs)
-            {
-                Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
-            }
+            //foreach (var log in newLogs)
+            //{
+            //    Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
+            //}
 
             // OriginalTextFileProcessor.SavePeople(people, peopleFile);
 
