@@ -8,12 +8,16 @@ namespace ConsoleUI
 {
     public static class GenericTextFileProcessor
     {
+
+        // Generic limitations appear after the close bracket and before the opening curly brace.
+        // This one specifies that the generic type must be a class (so cannot be a string or int etc)
+        // The generic class also needs to have an empty constructor
         public static List<T> LoadFromTextFile<T>(string filePath) where T : class, new()
         {
             var lines = System.IO.File.ReadAllLines(filePath).ToList();
             List<T> output = new List<T>();
             T entry = new T();
-            var cols = entry.GetType().GetProperties();
+            var cols = entry.GetType().GetProperties(); // Use reflection to get the properties of the generic class passed in
 
             // Checks to be sure we have at least one header row and one data row
             if (lines.Count < 2)
@@ -60,7 +64,7 @@ namespace ConsoleUI
             return output;
         }
 
-        public static void SaveToTextFile<T>(List<T> data, string filePath) where T : class, new()
+        public static void SaveToTextFile<T>(List<T> data, string filePath) where T : class
         {
             List<string> lines = new List<string>();
             StringBuilder line = new StringBuilder();

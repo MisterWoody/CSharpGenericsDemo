@@ -37,6 +37,28 @@ namespace ConsoleUI
 
             PopulateLists(people, logs);
 
+            /* New way - using generics */
+
+            GenericTextFileProcessor.SaveToTextFile<Person>(people, peopleFile);
+
+            GenericTextFileProcessor.SaveToTextFile<LogEntry>(logs, logFile);
+
+            var newPeople = GenericTextFileProcessor.LoadFromTextFile<Person>(peopleFile);
+
+            foreach (var p in newPeople)
+            {
+                Console.WriteLine($"{ p.FirstName } { p.LastName } (IsAlive = { p.IsAlive })");
+            }
+
+            var newLogs = GenericTextFileProcessor.LoadFromTextFile<LogEntry>(logFile);
+
+            foreach (var log in newLogs)
+            {
+                Console.WriteLine($"{log.ErrorCode}: {log.Message} at {log.TimeOfEvent.ToShortTimeString()}");
+            }
+
+            /* Old way of doing things without using generics */
+
             //OriginalTextFileProcessor.SaveLogs(logs,logFile);
             //var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
 
