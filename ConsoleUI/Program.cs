@@ -15,8 +15,10 @@ namespace ConsoleUI
             // Previously to generics, C# had ArrayList which has no specific typing but will allow objects to be added.
             // ArrayList is a deprecated feature - DO NOT USE IT!
 
-            List<int> ages = new List<int>();
-            ages.Add(23);
+            //List<int> ages = new List<int>();
+            //ages.Add(23);
+
+            DemonstrateTextFileStorage();
 
             
             Console.WriteLine();
