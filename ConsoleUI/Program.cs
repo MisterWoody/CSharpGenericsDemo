@@ -37,7 +37,7 @@ namespace ConsoleUI
 
             PopulateLists(people, logs);
 
-            OriginalTextFileProcessor.SaveLogs(logs,logFile);
+            //OriginalTextFileProcessor.SaveLogs(logs,logFile);
             var newLogs = OriginalTextFileProcessor.LoadLogs(logFile);
 
             foreach (var log in newLogs)
