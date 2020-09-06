@@ -10,8 +10,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            
+            List<int> ages = new List<int>();
 
+            ages.Add(23);
             
             Console.WriteLine();
             Console.Write("Press enter to shut down...");
